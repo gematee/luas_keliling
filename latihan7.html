@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+       <label for="atau">Luas atau Keliling?</label>
+       <input type="text" id="atau" name="atau">
+    <input type="button" id="proses" name="proses" value="proses" onclick="hitung()"> <br><br>
+    <div id="luas" style="display: none;">
+    <label for="panjang">Panjang</label>
+    <input type="text" id="panjang"><br>
+    <label for="lebar">Lebar</label>
+    <input type="text" id="lebar"> <br>
+    <input type="button" value="hitung" onclick="hitungluas()"> <br>
+        <label for="luas">Luas</label>
+        <input type="text" id="hasilluas" readonly>
+    </div>
+    <div id="keliling" style="display: none;">
+        <label for="panjangk">Panjang</label>
+        <input type="text" id="panjangk"> <br>
+        <label for="lebark">Lebar</label>
+        <input type="text" id="lebark"> <br>
+        <input type="button" value="hitung" onclick="hitungkeliling()"><br>
+        <label for="keliling">Keliling</label>
+        <input type="text" id="hasilkeliling" readonly>
+    </div>
+    <div id="salah" style="display: none;">
+        <p>Penulisan anda salah. Silahkan masukan luas atau keliling</p>
+    </div>
+   
+</form>
+
+</body>
+<script>
+    function hitung() {
+        var hitungapa = document.getElementById("atau").value;
+        if(hitungapa == "luas"){
+            document.getElementById("luas").style.display='block';
+            document.getElementById("keliling").style.display='none';
+            document.getElementById("salah").style.display='none';
+        }
+        else if(hitungapa == "keliling"){
+            document.getElementById("keliling").style.display='block';
+            document.getElementById("luas").style.display='none';
+            document.getElementById("salah").style.display='none';
+        }
+        else{
+            document.getElementById("salah").style.display='block';
+            document.getElementById("keliling").style.display='none';
+            document.getElementById("luas").style.display='none';
+        }
+       }
+    function hitungluas() {
+        var panjang = parseInt(document.getElementById("panjang").value);
+        var lebar = parseInt(document.getElementById("lebar").value);
+        var luas = panjang*lebar;
+        document.getElementById("hasilluas").value=luas;  
+    }
+    {
+    function hitungkeliling() {
+        var panjangk = parseInt(document.getElementById("panjangk").value);
+        var lebark = parseInt(document.getElementById("lebark").value);
+        var keliling = 2*(panjangk+lebark);
+        document.getElementById("hasilkeliling").value=keliling;
+        }
+    function typo() {
+        var salah = document.getElementById("salah").value;
+        document.getElementById("Penulisan salah");
+    }
+    }
+</script>
+</html>
